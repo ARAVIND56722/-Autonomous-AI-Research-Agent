@@ -59,9 +59,9 @@ function QuestionAnswer({ query, onAsk, answer, askLoading }) {
           </div>
         </div>
 
-        <p className="mt-4 text-sm text-slate-600 leading-7">
+        <p className="mt-4 text-sm text-slate-600 leading-7 whitespace-pre-wrap">
           {askLoading
-            ? "Generating answer from selected paper..."
+            ? "Downloading, indexing, and generating answer from selected paper... (This might take a few moments for the first query)"
             : answer || `Select a paper from ${query} search results and ask a question here.`}
         </p>
       </div>

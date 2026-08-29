@@ -68,8 +68,9 @@ function App() {
       const response = await askQuestion(
         currentQuery,
         question,
-        selectedPaper?.summary || "",
-        selectedPaper?.title || ""
+        selectedPaper?.arxiv_id || "",
+        selectedPaper?.title || "",
+        selectedPaper?.pdf_link || ""
       );
       setQaAnswer(response.response?.answer || "No answer received.");
     } catch (err) {

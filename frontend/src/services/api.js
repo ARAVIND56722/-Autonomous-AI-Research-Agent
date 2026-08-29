@@ -24,11 +24,11 @@ export async function fetchInsights(query) {
   return await response.json();
 }
 
-export async function askQuestion(query, question, paperSummary = "", paperTitle = "") {
+export async function askQuestion(query, question, arxivId = "", paperTitle = "", pdfUrl = "") {
   const response = await fetch(
     `${BASE_URL}/ask?query=${encodeURIComponent(query)}&question=${encodeURIComponent(
       question
-    )}&paper_summary=${encodeURIComponent(paperSummary)}&paper_title=${encodeURIComponent(paperTitle)}`
+    )}&arxiv_id=${encodeURIComponent(arxivId)}&paper_title=${encodeURIComponent(paperTitle)}&pdf_url=${encodeURIComponent(pdfUrl)}`
   );
 
   if (!response.ok) {

@@ -3,3 +3,9 @@ uvicorn
 python-multipart
 requests
 feedparser
+langchain
+langchain-google-genai
+langchain-community
+chromadb
+pymupdf
+python-dotenv

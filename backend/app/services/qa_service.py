@@ -1,24 +1,114 @@
-def generate_mock_answer(query: str = "", question: str = "", paper_summary: str = "", paper_title: str = ""):
-    topic = query.strip() if query.strip() else "Autonomous AI Research"
-    asked = question.strip() if question.strip() else "What is the main idea?"
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_core.prompts import ChatPromptTemplate
+from app.services.rag_service import retrieve_context, index_paper
 
-    if paper_summary.strip():
-        short_summary = paper_summary[:1200]
 
-        answer = (
-            f"Based on the selected paper"
-            f"{f' titled {paper_title}' if paper_title else ''}, "
-            f"the abstract suggests that {short_summary} "
-            f"For your question '{asked}', the answer is derived from this paper context rather than only the general topic. "
-            f"In simple terms, this paper contributes to {topic} by providing research evidence, methods, or findings relevant to your question."
+def extract_text(response):
+    content = response.content
+
+    if isinstance(content, str):
+        return content.strip()
+
+    if isinstance(content, list):
+        parts = []
+
+        for block in content:
+            if isinstance(block, dict):
+                text = block.get("text")
+                if text:
+                    parts.append(text)
+            elif isinstance(block, str):
+                parts.append(block)
+
+        return "".join(parts).strip()
+
+    return str(content).strip()
+
+
+def generate_answer(
+    query: str = "",
+    question: str = "",
+    arxiv_id: str = "",
+    paper_title: str = "",
+    pdf_url: str = ""
+):
+    topic = query.strip() if query else "Autonomous AI Research"
+    asked = question.strip() if question else "What is the main idea?"
+
+    llm = ChatGoogleGenerativeAI(
+        model="gemini-3.6-flash",
+        temperature=0.2
+    )
+
+    if arxiv_id:
+
+        index_paper(arxiv_id, pdf_url)
+
+        context_chunks = retrieve_context(
+            arxiv_id,
+            asked,
+            k=4
         )
+
+        context = "\n\n---\n\n".join(context_chunks)
+
+        prompt = ChatPromptTemplate.from_messages([
+            (
+                "system",
+                """You are an expert AI research assistant.
+
+Answer the question ONLY using the retrieved context from
+the research paper titled "{paper_title}".
+
+Do not use information that is not supported by the provided context.
+
+If the answer cannot be found in the retrieved context, say:
+"I cannot find the answer to that in this paper."
+
+Provide a clear and concise answer."""
+            ),
+            (
+                "user",
+                """Retrieved paper context:
+
+{context}
+
+Question:
+{question}"""
+            )
+        ])
+
+        chain = prompt | llm
+
+        response = chain.invoke({
+            "paper_title": paper_title,
+            "context": context,
+            "question": asked
+        })
+
+        answer = extract_text(response)
+
     else:
-        answer = (
-            f"Based on the retrieved papers for {topic}, the system uses RAG to fetch relevant "
-            f"research context, AI agents to manage multi-step tasks like search and comparison, "
-            f"and LLM reasoning to summarize evidence and answer questions. For your question "
-            f"'{asked}', the grounded answer would ideally be produced from the most relevant paper content."
-        )
+
+        prompt = ChatPromptTemplate.from_messages([
+            (
+                "system",
+                "You are an expert AI research assistant. Answer questions about {topic}."
+            ),
+            (
+                "user",
+                "{question}"
+            )
+        ])
+
+        chain = prompt | llm
+
+        response = chain.invoke({
+            "topic": topic,
+            "question": asked
+        })
+
+        answer = extract_text(response)
 
     return {
         "topic": topic,
