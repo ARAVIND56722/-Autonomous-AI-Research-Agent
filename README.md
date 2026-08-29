@@ -283,7 +283,7 @@ These insights are generated using the Gemini LLM.
                                     │                  │
                                     ▼                  │
                              ┌─────────────┐           │
-                             │ Text Chunking│           │
+                             │ Text Chunking│          │
                              └──────┬──────┘           │
                                     │                  │
                                     ▼                  │
