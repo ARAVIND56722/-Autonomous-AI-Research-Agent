@@ -256,21 +256,6 @@ These insights are generated using the Gemini LLM.
 
 ---
 
-## 🎨 9. Modern User Interface
-
-The frontend is designed to provide a clean and user-friendly research experience.
-
-The UI avoids the typical dark-themed AI interface and focuses on:
-
-* Clean layout
-* Simple navigation
-* Research-focused presentation
-* Easy paper selection
-* Interactive question answering
-* Clear information display
-
----
-
 # 🏗️ System Architecture
 
 ```text
@@ -834,6 +819,20 @@ http://localhost:5173
 ---
 
 # 📸 Application Screenshots
+
+<img width="1891" height="915" alt="image" src="https://github.com/user-attachments/assets/7f70b212-31fc-4760-bdb0-cac1b489e450" />
+
+<img width="1882" height="906" alt="image" src="https://github.com/user-attachments/assets/48535a5b-c3ce-4a8f-8e26-977dd15112b8" />
+
+<img width="1722" height="832" alt="image" src="https://github.com/user-attachments/assets/33303ac7-b69c-42be-ac02-0db65d4626ad" />
+
+<img width="1853" height="918" alt="image" src="https://github.com/user-attachments/assets/e15494ac-77fd-4e08-b3cd-8d3f9d9de44e" />
+
+<img width="1850" height="877" alt="image" src="https://github.com/user-attachments/assets/1d008e85-ad4e-405f-a9b5-4c37aab865e5" />
+
+<img width="1888" height="917" alt="image" src="https://github.com/user-attachments/assets/a458e52e-cd5b-42f6-8baf-096d0e2c8869" />
+
+
 
 ## 🏠 Home / Research Dashboard
 
