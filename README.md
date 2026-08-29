@@ -820,46 +820,39 @@ http://localhost:5173
 
 # 📸 Application Screenshots
 
-<img width="1891" height="915" alt="image" src="https://github.com/user-attachments/assets/7f70b212-31fc-4760-bdb0-cac1b489e450" />
 
-<img width="1882" height="906" alt="image" src="https://github.com/user-attachments/assets/48535a5b-c3ce-4a8f-8e26-977dd15112b8" />
 
-<img width="1722" height="832" alt="image" src="https://github.com/user-attachments/assets/33303ac7-b69c-42be-ac02-0db65d4626ad" />
 
-<img width="1853" height="918" alt="image" src="https://github.com/user-attachments/assets/e15494ac-77fd-4e08-b3cd-8d3f9d9de44e" />
 
-<img width="1850" height="877" alt="image" src="https://github.com/user-attachments/assets/1d008e85-ad4e-405f-a9b5-4c37aab865e5" />
 
-<img width="1888" height="917" alt="image" src="https://github.com/user-attachments/assets/a458e52e-cd5b-42f6-8baf-096d0e2c8869" />
+
 
 
 
 ## 🏠 Home / Research Dashboard
 
-Add your screenshot here:
-
 ```text
-![Home Dashboard](screenshots/home.png)
+<img width="1891" height="915" alt="image" src="https://github.com/user-attachments/assets/7f70b212-31fc-4760-bdb0-cac1b489e450" />
+
+<img width="1882" height="906" alt="image" src="https://github.com/user-attachments/assets/48535a5b-c3ce-4a8f-8e26-977dd15112b8" />
 ```
 
 ---
 
 ## 🔍 Research Paper Search
 
-Add your screenshot here:
-
 ```text
-![Paper Search](screenshots/search.png)
+<img width="1722" height="832" alt="image" src="https://github.com/user-attachments/assets/33303ac7-b69c-42be-ac02-0db65d4626ad" />
+
+<img width="1853" height="918" alt="image" src="https://github.com/user-attachments/assets/e15494ac-77fd-4e08-b3cd-8d3f9d9de44e" />
 ```
 
 ---
 
 ## 📄 Paper Details
 
-Add your screenshot here:
-
 ```text
-![Paper Details](screenshots/paper-details.png)
+<img width="1853" height="918" alt="image" src="https://github.com/user-attachments/assets/e15494ac-77fd-4e08-b3cd-8d3f9d9de44e" />
 ```
 
 ---
@@ -869,7 +862,7 @@ Add your screenshot here:
 Add your screenshot here:
 
 ```text
-![AI Insights](screenshots/insights.png)
+<img width="1850" height="877" alt="image" src="https://github.com/user-attachments/assets/1d008e85-ad4e-405f-a9b5-4c37aab865e5" />
 ```
 
 ---
@@ -879,66 +872,8 @@ Add your screenshot here:
 Add your screenshot here:
 
 ```text
-![RAG Question Answering](screenshots/qa.png)
+<img width="1888" height="917" alt="image" src="https://github.com/user-attachments/assets/a458e52e-cd5b-42f6-8baf-096d0e2c8869" />
 ```
-
----
-
-## 🧠 Generated AI Response
-
-Add your screenshot here:
-
-```text
-![AI Generated Answer](screenshots/answer.png)
-```
-
-> Create a `screenshots` folder in the project root and place your actual screenshots inside it using the filenames above.
-
----
-
-# 🧪 Example
-
-### User Search
-
-```text
-RAG
-```
-
-### Selected Paper
-
-```text
-RAG-Star: Enhancing Deliberative Reasoning with
-Retrieval Augmented Verification and Refinement
-```
-
-### User Question
-
-```text
-What problem is the author trying to solve?
-```
-
-### Internal Processing
-
-```text
-Question
-   ↓
-Chroma Semantic Search
-   ↓
-Top 4 Relevant Chunks
-   ↓
-Retrieved Paper Context
-   ↓
-Gemini 3.6 Flash
-```
-
-### Output
-
-```text
-The system generates a new answer based on
-the retrieved content from the research paper.
-```
-
-The answer is **not hard-coded** in the application.
 
 ---
 
@@ -1062,37 +997,6 @@ Improve processing of:
 * Images
 * Captions
 * References
-
----
-
-## 🤖 Advanced Autonomous Agent
-
-Upgrade the current agent-style workflow into a more autonomous system capable of:
-
-* Planning research tasks
-* Selecting tools dynamically
-* Searching multiple sources
-* Performing iterative retrieval
-* Verifying generated information
-* Conducting multi-step research
-
----
-
-## 📝 Automatic Citation Generation
-
-Generate academic-style citations and references from the papers used by the system.
-
----
-
-## 📈 Research Trend Analysis
-
-Analyze multiple papers over time to identify:
-
-* Emerging topics
-* Research trends
-* Frequently used methods
-* Research gaps
-* Potential future directions
 
 ---
 
