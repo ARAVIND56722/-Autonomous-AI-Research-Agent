@@ -1,5 +1,5 @@
-const BASE_URL = "https://autonomous-ai-research-agent-cixj.onrender.com";
-
+const BASE_URL = "http://127.0.0.1:8000";
+//https://autonomous-ai-research-agent-cixj.onrender.com
 export async function searchPapers(query) {
   const response = await fetch(
     `${BASE_URL}/search?query=${encodeURIComponent(query)}`

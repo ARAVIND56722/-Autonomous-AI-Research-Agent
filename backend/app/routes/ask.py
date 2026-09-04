@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException
+from langchain_google_genai.chat_models import GoogleRateLimitError
+
 from app.services.qa_service import generate_answer
-import traceback
 
 router = APIRouter()
 
@@ -13,7 +14,9 @@ def ask_question(
     paper_title: str = "",
     pdf_url: str = "",
 ):
+
     try:
+
         result = generate_answer(
             query,
             question,
@@ -28,10 +31,14 @@ def ask_question(
             "response": result
         }
 
+    except GoogleRateLimitError:
+
+        raise HTTPException(
+            status_code=429,
+            detail="AI service quota has been reached. Please try again later."
+        )
+
     except Exception as e:
-        print("\n========== ASK ENDPOINT ERROR ==========")
-        traceback.print_exc()
-        print("========================================\n")
 
         raise HTTPException(
             status_code=500,
