@@ -45,6 +45,10 @@ This process becomes inefficient when a user needs to analyze multiple papers or
 
 ---
 
+### Live Demo : https://autonomous-ai-research-agent.vercel.app
+
+---
+
 # 💡 Proposed Solution
 
 The Autonomous AI Research Agent addresses this problem by combining **arXiv search, document processing, RAG, vector search, and LLM-based generation** into a single application.
