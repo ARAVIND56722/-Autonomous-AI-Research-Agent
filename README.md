@@ -45,7 +45,7 @@ This process becomes inefficient when a user needs to analyze multiple papers or
 
 ---
 
-### Live Demo : https://autonomous-ai-research-agent.vercel.app?_vercel_share=9zWjvJJVPNjXKlMObuzd3yrCd2TFe3Ie
+### Live Demo: https://autonomous-ai-research-agent.vercel.app
 
 ---
 
